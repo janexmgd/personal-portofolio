@@ -20,6 +20,12 @@ const Home = () => {
         'A project for download post or reels from instagram using instagram api, this project just using your instagram cookie to fetch other profile',
       link: 'https://github.com/janexmgd/instafvck-js',
     },
+    {
+      title: 'kfcku-regist',
+      description:
+        'A tool for automation creating account at kfcku app, this project built with sniffing http request at kfcku application',
+      link: 'https://github.com/imjanexmgd/kfcku-regist',
+    },
   ];
   return (
     <div className='flex min-h-screen  w-full'>
