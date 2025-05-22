@@ -1,5 +1,26 @@
 import { Facebook, GithubIcon } from 'lucide-react';
+import flower from '../assets/flower.svg';
 const Home = () => {
+  const projects = [
+    {
+      title: 'twitterorx',
+      description:
+        'A project for to get all media from twitter by username, using twitter api. Built with Axios, boxen, chalk, dotenv, inquirer. This project using Twitter api (must authenticated user)',
+      link: 'https://github.com/janexmgd/twitterorx',
+    },
+    {
+      title: 'saio',
+      description:
+        'A project for download post from tiktok, using stack react tailwind for frontend, and using axios,streamify,express for backend api',
+      link: 'https://github.com/janexmgd/saio',
+    },
+    {
+      title: 'instafvck-js',
+      description:
+        'A project for download post or reels from instagram using instagram api, this project just using your instagram cookie to fetch other profile',
+      link: 'https://github.com/janexmgd/instafvck-js',
+    },
+  ];
   return (
     <div className='flex min-h-screen  w-full'>
       {/* info */}
@@ -23,7 +44,7 @@ const Home = () => {
         <div className='flex-1 w-px bg-pink-400 mt-2'></div>
       </div>
 
-      <div className='w-10/12 ml-auto mr-auto min-h-screen px-5'>
+      <div className='w-10/12 mr-auto ml-auto min-h-screen px-5 flex flex-col items-center'>
         {/* opening */}
         <div className='flex flex-col pt-10 w-full max-w-3xl min-h-screen md:h-fit '>
           <p className='text-lg'>Hi, my name is</p>
@@ -77,21 +98,20 @@ const Home = () => {
             <div className='flex-1 h-px bg-gray-500 ml-2'></div>
           </h2>
           <div className='mt-5'>
-            <a
-              href='https://github.com/janexmgd/twitterorx'
-              target='_blank'
-              className='min-w-full min-h-80 outline bg-pink-400/10 hover:cursor-pointer flex flex-col px-10 justify-center'
-            >
-              <span className='text-pink-400 font-mono text-lg'>
-                Featured Project
-              </span>
-              <span className='text-2xl text-gray-300'>twitterorx</span>
-              <span className='mt-5 text-gray-300'>
-                A project for to get all media from twitter by username, using
-                twitter api. Built with Axios, boxen, chalk, dotenv, inquirer.
-                This project using Twitter api (must authenticated user)
-              </span>
-            </a>
+            {projects.map((project, index) => (
+              <a
+                key={index}
+                href={project.link}
+                target='_blank'
+                className='min-w-full min-h-80 outline bg-pink-400/10 hover:cursor-pointer flex flex-col px-10 justify-center m-5'
+              >
+                <span className='text-pink-400 font-mono text-lg'>Project</span>
+                <span className='text-2xl text-gray-300'>{project.title}</span>
+                <span className='mt-5 text-gray-300'>
+                  {project.description}
+                </span>
+              </a>
+            ))}
           </div>
         </div>
         {/* <div className='flex flex-col items-center pb-10 w-full'>
